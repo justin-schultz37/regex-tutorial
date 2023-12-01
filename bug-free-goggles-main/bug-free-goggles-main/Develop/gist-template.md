@@ -34,27 +34,29 @@ This regex pattern ensures that a password meets specific criteria, including th
 ## Regex Components
 
 ### Anchors
-
+Anchors assert a position in the string. In this regex, ```^``` asserts the start of the string, and ```$``` asserts the end.
+<br><code>^</code>(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}<code>&#36;</code></br>
 ### Quantifiers
-
+Quantifiers define how many instances of the preceding element are allowed. ```{8,32}``` specifies that the password must be between 8 and 32 characters long.
 ### OR Operator
-
+The OR operator, denoted by ```|```, allows for a choice between alternatives. This regex doesn't explicitly use the OR operator.
 ### Character Classes
-
+Character classes match a single character from a set. ```[0-9]```, ```[a-z]```, and ```[A-Z]``` ensure the presence of digits, lowercase, and uppercase letters, respectively.
 ### Flags
-
+Flags modify the behavior of the regex. This regex doesn't use any flags, but keep in mind that different programming languages may have their own set of flags.
+<br>A simple example would be using ```i``` to match characters regardless of case sensitivity. ```'/abc/i'``` would match both 'ABC' and 'abc'.</br>
 ### Grouping and Capturing
-
+<br>^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<br>,.?/~_+-=|\]).{8,32}$</br>
 ### Bracket Expressions
-
+<br>^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<br>,.?/~_+-=|\]).{8,32}$</br>
 ### Greedy and Lazy Match
-
+<br>^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<br>,.?/~_+-=|\]).{8,32}$</br>
 ### Boundaries
-
+<br>^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<br>,.?/~_+-=|\]).{8,32}$</br>
 ### Back-references
-
+<br>^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<br>,.?/~_+-=|\]).{8,32}$</br>
 ### Look-ahead and Look-behind
-
+<br>^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<br>,.?/~_+-=|\]).{8,32}$</br>
 ## Author
 
 A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)

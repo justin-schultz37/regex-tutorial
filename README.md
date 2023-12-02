@@ -19,6 +19,7 @@ This regex pattern ensures that a password meets specific criteria, including th
 
 ## Table of Contents
 
+- [Metacharacters](#metacharacters)
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
 - [OR Operator](#or-operator)
@@ -28,10 +29,13 @@ This regex pattern ensures that a password meets specific criteria, including th
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Boundaries](#boundaries)
-- [Back-references](#back-references)
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
+
+### Metacharacters
+
+Metacharacters are text and symbols that have special meaning when it comes to creating code. One of the reoccuring metacharaters used in this regex is the asterisk ```*```. It is used as a quantifier to allow any or none of the characters in the follow character classes. It allows the character classes to be flexible in the validation so that no specific character needs to be used or how frequently it gets used.
 
 ### Anchors
 
@@ -67,7 +71,7 @@ There are 4 groups captured in this password validation: ```(?=.*[0-9])```, ```(
 
 ### Bracket Expressions
 
-Bracket expressions define a character class. ```[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]``` includes various special characters that are allowed in the password.
+Bracket expressions define a character class. ```[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]``` includes various special characters that are allowed in the password. Take note that this regex includes metacharacters ```*``` inside of bracket expression. Would you assume it retains its special meaning "zero to many"? When you add characters inside of a bracket expression they get treated literally instead of having and meta meaning.
 
 ### Greedy and Lazy Match
 
@@ -77,13 +81,9 @@ Greedy matching is used by default. It matches as much as possible while still a
 
 Boundaries help define limits for matches. In this regex, ```^``` and ```$``` serve as boundaries, ensuring the entire string is matched.
 
-### Back-references
-
-Back-references refer to previously captured groups. This regex doesn't use back-references.
-
 ### Look-ahead and Look-behind
 
-Positive lookaheads (```(?= ...)```) assert that a particular pattern can be matched ahead in the string.
+Positive lookaheads (```(?= ...)```) assert that a particular pattern can be matched ahead in the string. They are useful in creating more complicated regular expressions. In this scenario, the the positive lookaheads are used to make sure make sure that one of each validation is used without explicitly determine the position in the validation process. Simply put, it doesnt matter where a number gets used in your password as long as one gets used.
 
 ## Author
 [Justin Schultz](https://github.com/justin-schultz37)
